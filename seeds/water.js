@@ -5,6 +5,6 @@ exports.seed = function(knex, Promise) {
     knex('water_sources').del(), 
 
     // Inserts seed entrie
-	knex('water_sources').insert({id: 1,  name: 'zip machine', location: 'eda', quality: 'very poor', review: 'piece of shite'})
+	knex('water_sources').insert({name: 'zip machine', location: 'eda', quality: 'very poor', review: 'piece of shite'})
 	);
 };
