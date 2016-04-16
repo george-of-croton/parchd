@@ -3,5 +3,8 @@ html
   head
     title= "SMDH"
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+  body(id = "create")
+      input(name = "name", type ='text', placeholder ='name of location', id = "name_form")
+      button(type = "button", id = "submitBtn")
+    script(src='/javascripts/bundle.js')
     block content
