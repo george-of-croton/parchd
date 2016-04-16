@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= "welcome to parched"
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h1= "welcome to parched"
+    div(id = "map")
+    button(id = "create")= "create"
+    script(src='/javascripts/bundle.js')
+    script(src='/javascripts/map.js')
+    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIbtc35tJsMWvrdhg6V579gpQDkEzNo4&callback=initMap")
+
+    block content
+
+
