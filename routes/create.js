@@ -5,7 +5,7 @@ var fs = require('fs')
 /*  POST form data*/
 
 router.post('/', function(req, res, data){
-  fs.writeFile('response.json', JSON.stringify(req.body), function(err){
+  fs.writeFile('response.json', JSON.stringify(req.body), 'utf8', function(err){
     if(err){
       console.log("error with writefile")
     }
@@ -17,10 +17,11 @@ router.post('/', function(req, res, data){
 })
 
 router.get('/new', function(req, res, next){
-  fs.readFile('response.json',(err, data) => {
+  fs.readFile('response.json',function(err, data){
     if (err) throw err;
     res.send(JSON.parse(data))
   })
+
 })
 
 /* GET home page. */

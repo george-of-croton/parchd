@@ -1,7 +1,11 @@
 var request = require('superagent')
 var createButton = document.getElementById("creator")
 var submitButton = document.getElementById('submitBtn')
-var formData = new FormData();
+var Firebase = require('firebase')
+firebase = new Firebase("https://parchd.firebaseio.com/")
+
+
+
 
 if(document.getElementById("water")){ //all /water logic goes here
   createButton.addEventListener("click", visitCreatePage)
@@ -24,16 +28,22 @@ function submitCreateForm() {
     description: document.getElementById("desc_form").value,
     location: document.getElementById("location_form").value
   }
- console.log(form)
- request
-   .post('/create')
-  .send(form)
-  .end(function(err, res){
-    if(err){
-      console.log(err)
+  firebase.push({})
+  console.log(form)
+  request
+    .post('/create')
+   .send(form)
+   .end(function(err, res){
+     if(err){
+       console.log(err)
     }
   })
 }
+
+///////////////////////////// MAP CODE BELOW/////////////
+
+
+
 
 
 
