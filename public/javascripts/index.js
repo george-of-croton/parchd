@@ -17,22 +17,25 @@ if(document.getElementById("create")){ // all /create logic goes here
   // window.location = "/create"
  }
 
- function submitCreateForm() {
+function submitCreateForm() {
   console.log("hello")
   var form = {
-    name: document.getElementById("name_form").value
+    name: document.getElementById("name_form").value,
+    description: document.getElementById("desc_form").value,
+    location: document.getElementById("location_form").value
   }
-  console.log(form)
-  request
-    .post('/create')
-    .send(form)
-    // .set('Accept', 'application/json')
-    .end(function(err, res){
-      if(err){
-        console.log(err)
-      }
-      console.log("we are cooking with gas, admiral!")
-    })
- }
+ console.log(form)
+ request
+   .post('/create')
+  .send(form)
+  .end(function(err, res){
+    if(err){
+      console.log(err)
+    }
+  })
+}
+
+
+
 
 

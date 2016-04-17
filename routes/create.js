@@ -16,6 +16,13 @@ router.post('/', function(req, res, data){
   res.end()
 })
 
+router.get('/new', function(req, res, next){
+  fs.readFile('response.json',(err, data) => {
+    if (err) throw err;
+    res.send(JSON.parse(data))
+  })
+})
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('create')
