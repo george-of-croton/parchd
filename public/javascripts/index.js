@@ -5,8 +5,6 @@ var Firebase = require('firebase')
 firebase = new Firebase("https://parchd.firebaseio.com/")
 
 
-
-
 if(document.getElementById("water")){ //all /water logic goes here
   createButton.addEventListener("click", visitCreatePage)
 }
@@ -15,7 +13,6 @@ if(document.getElementById("water")){ //all /water logic goes here
 if(document.getElementById("create")){ // all /create logic goes here
   submitButton.addEventListener("click", submitCreateForm)
 }
-
 
  function visitCreatePage() { //
   // window.location = "/create"
@@ -26,9 +23,10 @@ function submitCreateForm() {
   var form = {
     name: document.getElementById("name_form").value,
     description: document.getElementById("desc_form").value,
-    location: document.getElementById("location_form").value
+    lat: document.getElementById("lat_form").value,
+    lng: document.getElementById("lng_form").value
   }
-  firebase.push({})
+  firebase.push({lat: form.lat, lng: form.lng })
   console.log(form)
   request
     .post('/create')

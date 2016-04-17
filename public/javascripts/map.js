@@ -18,6 +18,15 @@ function initMap() {
 }
   if(document.getElementById('water')){
       console.log(getMarkers())
+      firebase.on('child_added', function(snapshot, prevChildKey){
+        var newPosition = snapshot.val();
+        var latLng = new google.maps.LatLng(newPosition.lat, newPosition.lng);
+        var marker = new google.maps.Marker({
+          position: latLng,
+          map: map
+        })
+      })
+
   }
 
 function addMarker(location) {
@@ -26,7 +35,8 @@ function addMarker(location) {
     map: map
   })
   markers.push(marker)
-  document.getElementById('location_form').value = "lat: " + location.lat + " lng: " + location.lng
+  document.getElementById('lat_form').value = location.lat
+  document.getElementById('lng_form').value = location.lng
 }
 
 function setMapOnAll (map) {

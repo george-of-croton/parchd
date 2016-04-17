@@ -1793,9 +1793,10 @@ function submitCreateForm() {
   var form = {
     name: document.getElementById("name_form").value,
     description: document.getElementById("desc_form").value,
-    location: document.getElementById("location_form").value
+    lat: document.getElementById("lat_form").value,
+    lng: document.getElementById("lng_form").value
   }
-  firebase.push({})
+  firebase.push({lat: form.lat, lng: form.lng })
   console.log(form)
   request
     .post('/create')

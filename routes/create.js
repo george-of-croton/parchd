@@ -17,6 +17,7 @@ router.post('/', function(req, res, data){
 })
 
 router.get('/new', function(req, res, next){
+  res.render('water')
   fs.readFile('response.json',function(err, data){
     if (err) throw err;
     res.send(JSON.parse(data))
