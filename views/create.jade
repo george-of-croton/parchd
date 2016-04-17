@@ -7,7 +7,8 @@ html
     div(id = "map")
     input(name = "name", type ='text', placeholder ='name of location', id = "name_form")
     input(name = "description", type = 'text' placeholder = "description", id = "desc_form")
-    input(name = 'location', type = 'text', placeholder = "location", id = "location_form")
+    input(name = 'lat', type = 'text', placeholder = "latitude", id = "lat_form")
+    input(name = 'lng', type = 'text', placeholder = "longitude", id = "lng_form")
     a(href = '/create/new')
         button(type = "button", id = "submitBtn")= "submit"
     script(src='/javascripts/bundle.js')
