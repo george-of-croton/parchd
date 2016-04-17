@@ -3,5 +3,14 @@ html
   head
     title= "SMDH"
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+  body(id = "create")
+    div(id = "map")
+    input(name = "name", type ='text', placeholder ='name of location', id = "name_form")
+    input(name = "description", type = 'text' placeholder = "description", id = "desc_form")
+    input(name = 'location', type = 'text', placeholder = "location", id = "location_form")
+    a(href = '/create/new')
+        button(type = "button", id = "submitBtn")= "submit"
+    script(src='/javascripts/bundle.js')
+    script(src='/javascripts/map.js')
+    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIbtc35tJsMWvrdhg6V579gpQDkEzNo4&callback=initMap")
     block content
