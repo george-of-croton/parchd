@@ -29,15 +29,19 @@ function initMap() {
 
   }
 
-function addMarker(location) {
-  var marker = new google.maps.Marker({
-    position: location,
-    map: map
-  })
+function addMarker(location){
+  if(marker == undefined){
+    setMapOnAll()
+    var marker = new google.maps.Marker({
+      position: location,
+      map: map
+    })
+  }
   markers.push(marker)
   document.getElementById('lat_form').value = location.lat
   document.getElementById('lng_form').value = location.lng
 }
+
 
 function setMapOnAll (map) {
   for (var i = 0 ;i < markers.length; i++) {
