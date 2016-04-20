@@ -7,7 +7,9 @@ html
     h1= "welcome to parched"
     div(id = "map")
     a(href = "/create")
-      button(id = "creator")= "create"
+      button(id = "create")= "create"
+    a(href = '/sources')
+      button(id = "sourcePage")= "Sources"
     script(src='/javascripts/bundle.js')
     script(src='/javascripts/map.js')
     script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIbtc35tJsMWvrdhg6V579gpQDkEzNo4&callback=initMap")

@@ -27,3 +27,12 @@ html, body {
  -webkit-border-radius: 999px;
 }
 
+#desc_form {
+	text-align: center;
+	height: 60px;
+}
+
+#places {
+	width: 300px;
+	list-style: none;
+}

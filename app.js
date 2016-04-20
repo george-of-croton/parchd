@@ -4,11 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var knex = require('knex')( require('./knexfile')[process.env.NODE_ENV || 'development'] )
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var water = require('./routes/water');
 var create = require('./routes/create')
+var sources = require('./routes/sources')
 var app = express();
 
 // view engine setup
@@ -27,6 +29,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/water', water);
 app.use('/create', create);
+app.use('/sources', sources)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
