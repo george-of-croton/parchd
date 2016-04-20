@@ -18,7 +18,7 @@ router.post('/', function(req, res, data){
   console.log(data.name)
   knex('water_sources').insert({
     name: req.body.name,
-    location: "christchurch",
+    location: req.body.locale,
     review: req.body.description,
     quality: req.body.quality,
     latitude: req.body.lat,
