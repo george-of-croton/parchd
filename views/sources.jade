@@ -1,0 +1,16 @@
+doctype html
+html
+	head
+	title= "welcome to parched"
+	link(rel='stylesheet', href='/stylesheets/style.css')
+	body(id= "sources")
+			ul(id="places" )
+				each thing in places
+					div(id = "place")
+						li= thing.name
+						li= thing.location
+						li= thing.description
+						li= thing.review
+						li= thing.latitude
+						li= thing.longitude	
+	block content

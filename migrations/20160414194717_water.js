@@ -6,6 +6,8 @@ exports.up = function(knex, Promise) {
    table.string('location')
    table.string('quality')
    table.string('review')
+   table.float('latitude')
+   table.float('longitude')
   })  
 };
 
