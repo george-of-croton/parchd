@@ -20,7 +20,7 @@ router.post('/', function(req, res, data){
     name: req.body.name,
     location: "christchurch",
     review: req.body.description,
-    quality: "something",
+    quality: req.body.quality,
     latitude: req.body.lat,
     longitude: req.body.lng
   })

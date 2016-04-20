@@ -36,3 +36,8 @@ html, body {
 	width: 300px;
 	list-style: none;
 }
+#place {
+	border-style: solid;
+	border-width: 10px;
+	border-color: blue;
+}

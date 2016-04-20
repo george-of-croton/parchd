@@ -5,15 +5,18 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body(id = "create")
     div(id = "map")
+    h4(id= "locale")
     h4= "sourcename"
     input(name = "name", type ='text', placeholder ='name of location', id = "name_form")
     h4= "review"
     textarea(name = "description", type = 'text' placeholder = "description", id = "desc_form")
     h4= "quality"
+    select(id = "qual_form")
+        each val in [1,2,3,4,5,6,7,8,9,10]
+            option(value=i) #{val}
+    h4= "latitude"
     input(name = 'lat', type = 'text', placeholder = "latitude", id = "lat_form")
-    h4= "longitude"
-    input(name = 'lat', type = 'text', placeholder = "latitude", id = "lat_form")
-    h4="latitude"
+    h4="longitude"
     input(name = 'lng', type = 'text', placeholder = "longitude", id = "lng_form")
     a(href = '/create/new')
         button(type = "button", id = "submitBtn")= "submit"
