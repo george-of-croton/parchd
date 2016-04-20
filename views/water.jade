@@ -4,10 +4,11 @@ html
     title= "welcome to parched"
     link(rel='stylesheet', href='/stylesheets/style.css')
   body(id = "water")
-    h1= "welcome to parched"
+  div(id = "strip")
+    h1(id ="title")= "parchd"
     div(id = "map")
     a(href = "/create")
-      button(id = "create")= "create"
+      button(id = "Create")= "create"
     a(href = '/sources')
       button(id = "sourcePage")= "Sources"
     script(src='/javascripts/bundle.js')

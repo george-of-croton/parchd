@@ -4,13 +4,16 @@ html
 	title= "welcome to parched"
 	link(rel='stylesheet', href='/stylesheets/style.css')
 	body(id= "sources")
-			ul(id="places" )
-				each thing in places
-					div(id = "place")
-						li= thing.name
-						li= thing.location
-						li= thing.description
-						li= thing.review
-						li= thing.latitude
-						li= thing.longitude	
-	block content
+		a(href= '/water')
+			h1= "Parchd"
+		h1= "Water Sources"
+			div(id= "place")
+					each thing in places
+							a(href='/sources/#')
+								h2= thing.name
+							h3= thing.location
+							h6= thing.description
+							h1= thing.review
+							h5= thing.latitude
+							h5= thing.longitude	
+							block content

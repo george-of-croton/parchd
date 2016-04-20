@@ -23,6 +23,7 @@ function submitCreateForm() {
   var form = {
     name: document.getElementById("name_form").value,
     quality: document.getElementById('qual_form').value,
+    local: document.getElementById('locale').innerHTML,
     description: document.getElementById("desc_form").value,
     lat: document.getElementById("lat_form").value,
     lng: document.getElementById("lng_form").value
